@@ -1,0 +1,18 @@
+# Next.js
+.next/
+out/
+
+# Dependências
+node_modules/
+
+# Variáveis de ambiente — NUNCA subir ao git
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db

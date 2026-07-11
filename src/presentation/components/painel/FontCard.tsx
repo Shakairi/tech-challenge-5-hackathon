@@ -1,0 +1,43 @@
+'use client'
+import { usePreferences } from '../../contexts/PreferencesContext'
+import { SliderControl } from '../ui/SliderControl'
+
+const FONT_SIZES = ['small', 'medium', 'large'] as const
+const FONT_LABELS: Record<string, string> = { small: 'Pequeno', medium: 'Médio', large: 'Grande' }
+const FONT_PX: Record<string, string> = { small: '14px', medium: '16px', large: '20px' }
+
+const SPACINGS = ['compact', 'normal', 'wide'] as const
+const SPACING_LABELS: Record<string, string> = { compact: 'Compacto', normal: 'Normal', wide: 'Amplo' }
+
+export function FontCard() {
+  const { prefs, update } = usePreferences()
+
+  return (
+    <section className="bg-white rounded-2xl border border-gray-100 p-5 mb-4">
+      <h2 className="text-base font-medium text-gray-800 mb-4">Tamanho e legibilidade</h2>
+      <SliderControl
+        label="Tamanho da fonte"
+        value={FONT_SIZES.indexOf(prefs.fontSize) + 1}
+        min={1}
+        max={3}
+        displayValue={FONT_LABELS[prefs.fontSize]}
+        onChange={(v) => update({ fontSize: FONT_SIZES[v - 1] })}
+      />
+      <SliderControl
+        label="Espaçamento"
+        value={SPACINGS.indexOf(prefs.spacing) + 1}
+        min={1}
+        max={3}
+        displayValue={SPACING_LABELS[prefs.spacing]}
+        onChange={(v) => update({ spacing: SPACINGS[v - 1] })}
+      />
+      <div
+        className="mt-3 bg-gray-50 rounded-xl p-4 text-gray-700 transition-all"
+        style={{ fontSize: FONT_PX[prefs.fontSize] }}
+        aria-label="Prévia do texto com as configurações atuais"
+      >
+        Texto de exemplo. Ajuste o tamanho até ficar confortável para ler.
+      </div>
+    </section>
+  )
+}
