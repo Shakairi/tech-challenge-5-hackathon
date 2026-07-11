@@ -6,12 +6,12 @@ import { useState } from 'react'
 const NAV = [
   { href: '/dashboard',    label: 'Dashboard',     icon: <HomeIcon /> },
   { href: '/atividades',   label: 'Minhas Tarefas', icon: <TaskIcon /> },
-  { href: '/calendario',   label: 'Calendário',    icon: <CalIcon /> },
-  { href: '/lembretes',    label: 'Lembretes',     icon: <BellIcon /> },
-  { href: '/historico',    label: 'Histórico',     icon: <HistIcon /> },
+  // { href: '/calendario',   label: 'Calendário',    icon: <CalIcon /> },
+  // { href: '/lembretes',    label: 'Lembretes',     icon: <BellIcon /> },
+  // { href: '/historico',    label: 'Histórico',     icon: <HistIcon /> },
   { href: '/perfil',       label: 'Perfil',        icon: <UserIcon /> },
   { href: '/painel',       label: 'Configurações', icon: <CogIcon /> },
-  { href: '/ajuda',        label: 'Ajuda',         icon: <HelpIcon /> },
+  // { href: '/ajuda',        label: 'Ajuda',         icon: <HelpIcon /> },
 ]
 
 function HomeIcon() { return <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> }

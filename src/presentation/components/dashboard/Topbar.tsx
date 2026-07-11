@@ -8,9 +8,9 @@ const TITLES: Record<string, string> = {
   '/configuracoes':'Configurações',
   '/painel':       'Configurações',
   '/perfil':       'Perfil',
-  '/calendario':   'Calendário',
-  '/lembretes':    'Lembretes',
-  '/historico':    'Histórico',
+  // '/calendario':   'Calendário',
+  // '/lembretes':    'Lembretes',
+  // '/historico':    'Histórico',
 }
 
 function SearchIcon() {
